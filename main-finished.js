@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// Random helpers
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -13,7 +13,7 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-// Ball class
+
 class Ball {
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
@@ -65,7 +65,7 @@ class Ball {
   }
 }
 
-// EvilCircle class
+
 class EvilCircle {
   constructor(x, y) {
     this.x = x;
@@ -126,12 +126,12 @@ class EvilCircle {
   }
 }
 
-// Setup
+
 const balls = [];
 const para = document.querySelector("p");
 let ballCount = 0;
 
-// Create balls
+
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
@@ -147,11 +147,11 @@ while (balls.length < 25) {
   para.textContent = "Ball count: " + ballCount;
 }
 
-// Create evil circle
+
 const evil = new EvilCircle(width / 2, height / 2);
 evil.setControls();
 
-// Animation loop
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
